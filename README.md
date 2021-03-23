@@ -1,8 +1,10 @@
 # DatePicker
 
-Date picker implementation according to the following blog post
+Date picker implementation using Phoenix LiveView, according to the following blog post:
 
 https://supersimple.org/blog/date-picker
+
+![](docs/screenshot.png)
 
 To start your Phoenix server:
 
