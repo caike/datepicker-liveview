@@ -16,6 +16,7 @@ config :date_picker, DatePicker.Repo,
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :date_picker, DatePickerWeb.Endpoint,
+	   server: true,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,

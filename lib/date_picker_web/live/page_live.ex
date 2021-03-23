@@ -3,7 +3,7 @@ defmodule DatePickerWeb.PageLive do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, query: "", results: %{})}
+    {:ok, assign(socket, selected_date: Date.utc_today(), calendar_open: false, query: "", results: %{})}
   end
 
   @impl true
@@ -23,6 +23,13 @@ defmodule DatePickerWeb.PageLive do
          |> put_flash(:error, "No dependencies found matching \"#{query}\"")
          |> assign(results: %{}, query: query)}
     end
+  end
+
+  @impl true
+  def handle_info({:selected_date, date}, socket) do
+    socket = assign(socket, selected_date: date, calendar_open: true)
+
+    {:noreply, socket}
   end
 
   defp search(query) do

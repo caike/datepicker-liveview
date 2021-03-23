@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.date_picker {
+  @apply relative z-50;
+
+  h1 {
+    @apply text-base leading-6;
+    button {
+      @apply sm:text-purple-700 focus:outline-none;
+    }
+  }
+  .calendar {
+    @apply bg-white rounded-lg p-4 shadow-lg absolute top-6 left-28;
+    .month {
+      @apply text-center sm:text-gray-900 text-xs pb-2;
+    }
+    .previous_month {
+      @apply absolute top-5 left-7;
+    }
+    .next_month {
+      @apply absolute top-5 right-7;
+    }
+    .dow {
+      @apply text-xs sm:text-gray-500;
+      li {
+        @apply float-left block w-5 h-5 leading-5 text-center;
+      }
+    }
+    .week {
+      @apply text-sm sm:text-gray-900;
+      li {
+        @apply float-left block w-5 h-5 leading-5 text-center rounded-sm;
+
+        button {
+          @apply focus:outline-none;
+        }
+
+        &[aria-current="date"] {
+          @apply bg-purple-100;
+        }
+
+        button:disabled {
+          @apply opacity-100;
+        }
+      }
+    }
+  }
+}
